@@ -25,7 +25,7 @@ public class WHYY
 {
        public static void main(String[] args) 
        {
-           System.out.println("F for Respect");
+           System.out.println("F for Respectio");
     }
 
 }// class WHYY
