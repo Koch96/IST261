@@ -33,44 +33,76 @@ public class jfInstructorPreferences extends javax.swing.JFrame {
         jtTimes = new javax.swing.JTextField();
         jtPreferences = new javax.swing.JTextField();
         jtAbility = new javax.swing.JTextField();
+        jbConfirm = new javax.swing.JButton();
+        jlTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jlTimes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlTimes.setText("Instructor Times");
 
+        jlPreferences.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlPreferences.setText("Instructor Preferences");
         jlPreferences.setToolTipText("");
 
+        jlAbility.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlAbility.setText("Instructor Ability");
         jlAbility.setToolTipText("");
 
+        jtTimes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtTimes.setToolTipText("");
 
+        jtPreferences.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+
+        jtAbility.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jtAbility.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtAbilityActionPerformed(evt);
             }
         });
 
+        jbConfirm.setBackground(new java.awt.Color(0, 0, 153));
+        jbConfirm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbConfirm.setForeground(new java.awt.Color(255, 255, 255));
+        jbConfirm.setText("Confirm");
+
+        jlTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlTitle.setText("Instructor");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jlAbility)
-                    .addComponent(jlPreferences)
-                    .addComponent(jlTimes)
-                    .addComponent(jtTimes)
-                    .addComponent(jtPreferences)
-                    .addComponent(jtAbility))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jbConfirm)
+                        .addGap(100, 100, 100))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jlPreferences)
+                            .addComponent(jtTimes)
+                            .addComponent(jtPreferences)
+                            .addComponent(jtAbility, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(jlTimes))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jlAbility)))
+                        .addGap(70, 70, 70))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(jlTitle)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
+                .addComponent(jlTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jlTimes)
                 .addGap(18, 18, 18)
                 .addComponent(jtTimes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -82,7 +114,9 @@ public class jfInstructorPreferences extends javax.swing.JFrame {
                 .addComponent(jlAbility)
                 .addGap(29, 29, 29)
                 .addComponent(jtAbility, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
+                .addGap(30, 30, 30)
+                .addComponent(jbConfirm)
+                .addGap(8, 8, 8))
         );
 
         pack();
@@ -128,9 +162,11 @@ public class jfInstructorPreferences extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jbConfirm;
     private javax.swing.JLabel jlAbility;
     private javax.swing.JLabel jlPreferences;
     private javax.swing.JLabel jlTimes;
+    private javax.swing.JLabel jlTitle;
     private javax.swing.JTextField jtAbility;
     private javax.swing.JTextField jtPreferences;
     private javax.swing.JTextField jtTimes;

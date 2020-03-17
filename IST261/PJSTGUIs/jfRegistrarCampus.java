@@ -31,32 +31,65 @@ public class jfRegistrarCampus extends javax.swing.JFrame {
         jtCampus = new javax.swing.JTextField();
         jlCampus = new javax.swing.JLabel();
         jlTerm = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jbSave = new javax.swing.JButton();
+        jbExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 153));
 
+        jtTerm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+
+        jtCampus.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+
+        jlCampus.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlCampus.setText("Campus");
 
+        jlTerm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlTerm.setText("Term");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Registrar Campus");
+
+        jbSave.setBackground(new java.awt.Color(0, 0, 153));
+        jbSave.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbSave.setForeground(new java.awt.Color(255, 255, 255));
+        jbSave.setText("Save");
+
+        jbExit.setBackground(new java.awt.Color(0, 0, 153));
+        jbExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbExit.setForeground(new java.awt.Color(255, 255, 255));
+        jbExit.setText("Exit");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jlTerm)
-                    .addComponent(jlCampus))
-                .addGap(82, 82, 82)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtCampus)
-                    .addComponent(jtTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jlTerm)
+                                .addComponent(jlCampus))
+                            .addComponent(jbSave))
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtCampus)
+                            .addComponent(jtTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbExit, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jLabel1)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtCampus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlCampus))
@@ -64,7 +97,11 @@ public class jfRegistrarCampus extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtTerm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlTerm))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbSave)
+                    .addComponent(jbExit))
+                .addContainerGap())
         );
 
         pack();
@@ -106,6 +143,9 @@ public class jfRegistrarCampus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jbExit;
+    private javax.swing.JButton jbSave;
     private javax.swing.JLabel jlCampus;
     private javax.swing.JLabel jlTerm;
     private javax.swing.JTextField jtCampus;

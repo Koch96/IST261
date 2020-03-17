@@ -33,28 +33,39 @@ public class jfScheduleList extends javax.swing.JFrame {
         jtScheduleTwo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 153));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setFocusableWindowState(false);
+        setForeground(new java.awt.Color(255, 255, 255));
 
+        jlScheduleOne.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlScheduleOne.setText("Schedule 1");
 
+        jtScheduleOne.setText("View Schedule?");
+
+        jlScheduleTwo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlScheduleTwo.setText("Schedule 2");
+
+        jtScheduleTwo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtScheduleTwo.setText("View Schedule?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jlScheduleTwo)
                     .addComponent(jlScheduleOne)
-                    .addComponent(jtScheduleTwo, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                    .addComponent(jtScheduleOne))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(jtScheduleTwo)
+                    .addComponent(jtScheduleOne, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(35, 35, 35)
                 .addComponent(jlScheduleOne)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jtScheduleOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -62,7 +73,7 @@ public class jfScheduleList extends javax.swing.JFrame {
                 .addComponent(jlScheduleTwo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jtScheduleTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();

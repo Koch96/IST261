@@ -32,9 +32,13 @@ public class jfRevisedSchedule extends javax.swing.JFrame {
         jtSchedule = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 153));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jlProgramCoord.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jlProgramCoord.setText("Program Coordinator");
 
+        jlRevisedSchedule.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jlRevisedSchedule.setText("See Revised Schedule");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -46,11 +50,11 @@ public class jfRevisedSchedule extends javax.swing.JFrame {
                 .addComponent(jtSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(45, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jlRevisedSchedule)
-                    .addComponent(jlProgramCoord))
-                .addGap(139, 139, 139))
+                    .addComponent(jlProgramCoord)
+                    .addComponent(jlRevisedSchedule))
+                .addGap(127, 127, 127))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -60,7 +64,7 @@ public class jfRevisedSchedule extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jlRevisedSchedule)
                 .addGap(18, 18, 18)
-                .addComponent(jtSchedule, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+                .addComponent(jtSchedule, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

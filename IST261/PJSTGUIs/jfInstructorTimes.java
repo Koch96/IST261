@@ -37,21 +37,29 @@ public class jfInstructorTimes extends javax.swing.JFrame {
         jspTimes = new javax.swing.JScrollPane();
         jtTimes = new javax.swing.JTextArea();
         jbSend = new javax.swing.JButton();
+        jlTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jlMonday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlMonday.setText("Monday");
 
+        jlTuesday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlTuesday.setText("Tuesday");
 
+        jlWednesday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlWednesday.setText("Wednesday");
 
+        jlThursday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlThursday.setText("Thursday");
 
+        jlFriday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlFriday.setText("Friday");
 
+        jlSaturday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlSaturday.setText("Saturday");
 
+        jlSunday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlSunday.setText("Sunday");
         jlSunday.setToolTipText("");
 
@@ -59,37 +67,51 @@ public class jfInstructorTimes extends javax.swing.JFrame {
         jtTimes.setRows(5);
         jspTimes.setViewportView(jtTimes);
 
+        jbSend.setBackground(new java.awt.Color(0, 0, 153));
+        jbSend.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbSend.setForeground(new java.awt.Color(255, 255, 255));
         jbSend.setText("Send to Registrar");
+
+        jlTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlTitle.setText("Instructor Times");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlSunday)
-                            .addComponent(jlSaturday)
-                            .addComponent(jlFriday)
-                            .addComponent(jlThursday)
-                            .addComponent(jlWednesday)
-                            .addComponent(jlTuesday)
-                            .addComponent(jlMonday))
-                        .addGap(30, 30, 30)
-                        .addComponent(jspTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(301, 301, 301)
-                        .addComponent(jbSend)))
-                .addGap(0, 96, Short.MAX_VALUE))
+                    .addComponent(jlSunday)
+                    .addComponent(jlSaturday)
+                    .addComponent(jlFriday)
+                    .addComponent(jlThursday)
+                    .addComponent(jlWednesday)
+                    .addComponent(jlTuesday)
+                    .addComponent(jlMonday))
+                .addGap(28, 28, 28)
+                .addComponent(jspTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 93, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jlTitle)
+                        .addGap(255, 255, 255))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jbSend)
+                        .addGap(230, 230, 230))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(28, 28, 28)
+                .addComponent(jlTitle)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jspTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addComponent(jlMonday)
                         .addGap(18, 18, 18)
                         .addComponent(jlTuesday)
@@ -102,8 +124,7 @@ public class jfInstructorTimes extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jlSaturday)
                         .addGap(18, 18, 18)
-                        .addComponent(jlSunday))
-                    .addComponent(jspTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jlSunday)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jbSend)
                 .addContainerGap())
@@ -154,6 +175,7 @@ public class jfInstructorTimes extends javax.swing.JFrame {
     private javax.swing.JLabel jlSaturday;
     private javax.swing.JLabel jlSunday;
     private javax.swing.JLabel jlThursday;
+    private javax.swing.JLabel jlTitle;
     private javax.swing.JLabel jlTuesday;
     private javax.swing.JLabel jlWednesday;
     private javax.swing.JScrollPane jspTimes;
