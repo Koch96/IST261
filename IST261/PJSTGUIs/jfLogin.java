@@ -33,18 +33,26 @@ public class jfLogin extends javax.swing.JFrame {
         jlPassword = new javax.swing.JLabel();
         jbConfirm = new javax.swing.JButton();
         jlTitle = new javax.swing.JLabel();
+        jbExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 153));
 
         jlLogin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlLogin.setText("Login");
 
         jtLogin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jtLogin.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
 
         jpaPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jpaPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jpaPassword.setText("jPasswordField1");
+        jpaPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
 
         jlPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlPassword.setText("Password");
 
         jbConfirm.setBackground(new java.awt.Color(0, 0, 153));
@@ -53,14 +61,20 @@ public class jfLogin extends javax.swing.JFrame {
         jbConfirm.setText("Confirm");
 
         jlTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTitle.setText("User Login");
+
+        jbExit.setBackground(new java.awt.Color(0, 0, 153));
+        jbExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbExit.setForeground(new java.awt.Color(255, 255, 255));
+        jbExit.setText("Exit");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,11 +85,15 @@ public class jfLogin extends javax.swing.JFrame {
                             .addComponent(jpaPassword)
                             .addComponent(jtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlTitle)
-                            .addComponent(jbConfirm))
-                        .addGap(76, 76, 76)))
+                        .addComponent(jlTitle)
+                        .addGap(85, 85, 85)))
                 .addGap(23, 23, 23))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jbConfirm)
+                .addGap(47, 47, 47)
+                .addComponent(jbExit)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,9 +108,11 @@ public class jfLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jpaPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlPassword))
-                .addGap(18, 18, 18)
-                .addComponent(jbConfirm)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbConfirm)
+                    .addComponent(jbExit))
+                .addContainerGap())
         );
 
         pack();
@@ -135,6 +155,7 @@ public class jfLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jbConfirm;
+    private javax.swing.JButton jbExit;
     private javax.swing.JLabel jlLogin;
     private javax.swing.JLabel jlPassword;
     private javax.swing.JLabel jlTitle;

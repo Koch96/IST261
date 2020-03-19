@@ -38,33 +38,44 @@ public class jfInstructorTimes extends javax.swing.JFrame {
         jtTimes = new javax.swing.JTextArea();
         jbSend = new javax.swing.JButton();
         jlTitle = new javax.swing.JLabel();
+        jbSave = new javax.swing.JButton();
+        jbExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 153));
 
         jlMonday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlMonday.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlMonday.setText("Monday");
 
         jlTuesday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlTuesday.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTuesday.setText("Tuesday");
 
         jlWednesday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlWednesday.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlWednesday.setText("Wednesday");
 
         jlThursday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlThursday.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlThursday.setText("Thursday");
 
         jlFriday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlFriday.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlFriday.setText("Friday");
 
         jlSaturday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlSaturday.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlSaturday.setText("Saturday");
 
         jlSunday.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlSunday.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlSunday.setText("Sunday");
         jlSunday.setToolTipText("");
 
         jtTimes.setColumns(20);
         jtTimes.setRows(5);
+        jtTimes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jspTimes.setViewportView(jtTimes);
 
         jbSend.setBackground(new java.awt.Color(0, 0, 153));
@@ -73,14 +84,29 @@ public class jfInstructorTimes extends javax.swing.JFrame {
         jbSend.setText("Send to Registrar");
 
         jlTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTitle.setText("Instructor Times");
+
+        jbSave.setBackground(new java.awt.Color(0, 0, 153));
+        jbSave.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbSave.setForeground(new java.awt.Color(255, 255, 255));
+        jbSave.setText("Save");
+
+        jbExit.setBackground(new java.awt.Color(0, 0, 153));
+        jbExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbExit.setForeground(new java.awt.Color(255, 255, 255));
+        jbExit.setText("Exit");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(255, Short.MAX_VALUE)
+                .addComponent(jlTitle)
+                .addGap(255, 255, 255))
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlSunday)
                     .addComponent(jlSaturday)
@@ -89,29 +115,28 @@ public class jfInstructorTimes extends javax.swing.JFrame {
                     .addComponent(jlWednesday)
                     .addComponent(jlTuesday)
                     .addComponent(jlMonday))
-                .addGap(28, 28, 28)
-                .addComponent(jspTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 93, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jlTitle)
-                        .addGap(255, 255, 255))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jbSave)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jbSend)
-                        .addGap(230, 230, 230))))
+                        .addGap(86, 86, 86)
+                        .addComponent(jbExit))
+                    .addComponent(jspTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jlTitle)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jspTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
+                        .addGap(18, 18, 18)
+                        .addComponent(jspTimes, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
                         .addComponent(jlMonday)
                         .addGap(18, 18, 18)
                         .addComponent(jlTuesday)
@@ -125,9 +150,12 @@ public class jfInstructorTimes extends javax.swing.JFrame {
                         .addComponent(jlSaturday)
                         .addGap(18, 18, 18)
                         .addComponent(jlSunday)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jbSend)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbSave)
+                    .addComponent(jbExit)
+                    .addComponent(jbSend))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -169,6 +197,8 @@ public class jfInstructorTimes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jbExit;
+    private javax.swing.JButton jbSave;
     private javax.swing.JButton jbSend;
     private javax.swing.JLabel jlFriday;
     private javax.swing.JLabel jlMonday;

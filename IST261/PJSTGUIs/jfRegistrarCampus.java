@@ -39,16 +39,23 @@ public class jfRegistrarCampus extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 0, 153));
 
         jtTerm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jtTerm.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jtTerm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
 
         jtCampus.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jtCampus.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jtCampus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
 
         jlCampus.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlCampus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlCampus.setText("Campus");
 
         jlTerm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlTerm.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jlTerm.setText("Term");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Registrar Campus");
 
         jbSave.setBackground(new java.awt.Color(0, 0, 153));
@@ -97,7 +104,7 @@ public class jfRegistrarCampus extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtTerm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlTerm))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbSave)
                     .addComponent(jbExit))

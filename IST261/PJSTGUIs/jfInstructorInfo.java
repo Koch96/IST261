@@ -42,45 +42,63 @@ public class jfInstructorInfo extends javax.swing.JFrame {
         jtDepartment = new javax.swing.JTextField();
         jbAddCourse = new javax.swing.JButton();
         jlTitle = new javax.swing.JLabel();
+        jbExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 153));
 
         jlCampus.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlCampus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlCampus.setText("Campus:");
 
         jlTerm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlTerm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTerm.setText("Term:");
 
         jlCourse.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlCourse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlCourse.setText("Course:");
         jlCourse.setToolTipText("");
 
         jcCampus.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jcCampus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "University Park", "Abington", "Altoona", "Beaver", "Berks", "Brandywine", "Carlisle", "Dubois", "Erie (Behrend)", "Fayette", "Greater Allegheny", "Great Valley", "Harrisburg", "Hazleton", "Hershey", "Lehigh Valley", "Mont Alto", "New Kensington", "Penn College of Technology", "Schuylkill", "Scranton", "Shenango", "Wilkes-Barre", "York" }));
+        jcCampus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
 
         jcTerm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jcTerm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Spring 2021", "Summer 2021", "Fall 2021", "Spring 2022" }));
+        jcTerm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
 
         jcCourse.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jcCourse.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcCourse.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
 
         jlAddCourse.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlAddCourse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlAddCourse.setText("Add a Course:");
 
         jlDays.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlDays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlDays.setText("Days Available:");
 
         jlTimes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlTimes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTimes.setText("Times Available:");
 
         jlDepartment.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jlDepartment.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlDepartment.setText("Department:");
 
         jtDays.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jtDays.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtDays.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jtTimes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jtTimes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtTimes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jtDepartment.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jtDepartment.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtDepartment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jbAddCourse.setBackground(new java.awt.Color(0, 0, 153));
         jbAddCourse.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -88,7 +106,13 @@ public class jfInstructorInfo extends javax.swing.JFrame {
         jbAddCourse.setText("Add Course");
 
         jlTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTitle.setText("Instructor Info");
+
+        jbExit.setBackground(new java.awt.Color(0, 0, 153));
+        jbExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbExit.setForeground(new java.awt.Color(255, 255, 255));
+        jbExit.setText("Exit");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,14 +127,6 @@ public class jfInstructorInfo extends javax.swing.JFrame {
                         .addComponent(jtDays, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlTimes)
-                            .addComponent(jlDepartment))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtTimes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtDepartment, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlTerm)
                             .addComponent(jlCourse)
                             .addComponent(jlCampus))
@@ -118,13 +134,21 @@ public class jfInstructorInfo extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jcCourse, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jcTerm, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jcCampus, 0, 360, Short.MAX_VALUE))))
+                            .addComponent(jcCampus, 0, 360, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlTimes)
+                            .addComponent(jlDepartment)
+                            .addComponent(jbAddCourse))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtTimes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtDepartment, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbExit, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jbAddCourse)
-                    .addComponent(jlAddCourse))
+                .addContainerGap(194, Short.MAX_VALUE)
+                .addComponent(jlAddCourse)
                 .addGap(188, 188, 188))
             .addGroup(layout.createSequentialGroup()
                 .addGap(184, 184, 184)
@@ -162,9 +186,11 @@ public class jfInstructorInfo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlDepartment)
                     .addComponent(jtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(jbAddCourse)
-                .addGap(81, 81, 81))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbAddCourse)
+                    .addComponent(jbExit))
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -207,6 +233,7 @@ public class jfInstructorInfo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jbAddCourse;
+    private javax.swing.JButton jbExit;
     private javax.swing.JComboBox<String> jcCampus;
     private javax.swing.JComboBox<String> jcCourse;
     private javax.swing.JComboBox<String> jcTerm;
