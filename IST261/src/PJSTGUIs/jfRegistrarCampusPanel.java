@@ -7,7 +7,7 @@ package PJSTGUIs;
 
 /**
  *
- * @author Jake_Gaming_PC
+ * @author Joe Fromuth 
  */
 public class jfRegistrarCampusPanel extends javax.swing.JPanel {
 

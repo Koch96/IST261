@@ -7,7 +7,7 @@ package PJSTGUIs;
 
 /**
  *
- * @author Jake_Gaming_PC
+ * @author Joe Fromuth 
  */
 public class jfInstructorPreferencesPanel extends javax.swing.JPanel {
 

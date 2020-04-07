@@ -8,7 +8,7 @@ package IST261;
 
 /**
  *
- * @author jmm7925
+ * @author Jacob Mullan
  * @version 0.1
  * @since Mar 5, 2020 1:08:19 PM
  * 

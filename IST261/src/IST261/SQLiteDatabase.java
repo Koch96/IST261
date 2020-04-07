@@ -8,7 +8,7 @@ package IST261;
 import java.sql.*;
 /**
  *
- * @author Jake_Gaming_PC
+ * @author Jacob Mullan
  */
 public class SQLiteDatabase 
 {

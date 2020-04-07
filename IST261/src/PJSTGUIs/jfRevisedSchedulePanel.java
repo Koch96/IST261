@@ -7,7 +7,7 @@ package PJSTGUIs;
 
 /**
  *
- * @author Jake_Gaming_PC
+ * @author Joe Fromuth 
  */
 public class jfRevisedSchedulePanel extends javax.swing.JPanel {
 

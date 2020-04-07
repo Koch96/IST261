@@ -7,7 +7,7 @@ package PJSTGUIs;
 
 /**
  *
- * @author Jake_Gaming_PC
+ * @author Jacob Mullan 
  */
 public class jfMainFrame extends javax.swing.JPanel {
 

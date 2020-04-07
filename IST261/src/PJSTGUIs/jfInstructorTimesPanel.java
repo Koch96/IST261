@@ -8,7 +8,7 @@ package PJSTGUIs;
 
 /**
  *
- * @author Jake_Gaming_PC
+ * @author Joe Fromuth 
  */
 public class jfInstructorTimesPanel extends javax.swing.JPanel {
 
