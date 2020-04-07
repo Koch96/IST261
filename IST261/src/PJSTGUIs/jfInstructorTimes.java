@@ -151,10 +151,11 @@ public class jfInstructorTimes extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jlSunday)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbSave)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbExit)
-                    .addComponent(jbSend))
+                    .addComponent(jbSend)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jbSave)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
