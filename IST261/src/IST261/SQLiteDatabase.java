@@ -12,7 +12,7 @@ import java.sql.*;
  */
 public class SQLiteDatabase 
 {
-     private String filePath = "";
+     private String filePath = SQLiteDatabase.class.getResource("/Database/SchoolDatabase.db").getFile();
     private Connection  myCon = null;
 
     
@@ -72,7 +72,7 @@ public class SQLiteDatabase
     
     public void connectDatabase(Connection myCon )
     {
-     //All code followed  from  https://www.sqlitetutorial.net/sqlite-java/sqlite-jdbc-driver/
+     // code followed  from  https://www.sqlitetutorial.net/sqlite-java/sqlite-jdbc-driver/
     
        
         try
@@ -94,6 +94,8 @@ public class SQLiteDatabase
     
     
     // gotten from https://www.sqlitetutorial.net/sqlite-java/create-table/
+    
+    //table stuff
     
     public void createTable(String tableQuery)
     {
@@ -158,31 +160,31 @@ public class SQLiteDatabase
     }// TableQuery
             
     
-    
-      /*      
-    public void inputScores( int id, String name, String scores)
+    //prepared Statements 
+           
+    public void inputInstructorInfo( String campus, String term, String course)
     {
-        String stmt = "INSERT INTO Scores( ID, name, score) VALUES( ?, ?, ?)";
+        String stmt = "INSERT INTO Instructor ( campus, term, course) VALUES( ?, ?, ?)";
         
         try
         {
             PreparedStatement preStmt = myCon.prepareStatement(stmt);
             
-            preStmt.setInt(1, id);
-            preStmt.setString(2,name);
-            preStmt.setString(3, scores);
+            preStmt.setString(1, campus);
+            preStmt.setString(2,term);
+            preStmt.setString(3, course);
             preStmt.executeUpdate();
             
-        }
+        }// try block
         
         catch(SQLException e)
         {
             System.out.println(e.getMessage());
         }// catch SQLException
         
-    }// inputScore Prepared statement    
+    }// inputInstructorInfo Prepared statement    
 
-    */
+    
             
     public void disconnect(Connection myCon)
     {

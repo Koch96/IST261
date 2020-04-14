@@ -6,6 +6,8 @@
 
 package IST261;
 
+import java.sql.*;
+
 /**
  *
  * @author Jacob Mullan
@@ -26,7 +28,10 @@ public class Test
     public static void main(String[] args) 
     {
         SQLiteDatabase dTemp = new SQLiteDatabase();
+        Connection myCon = null;
+        dTemp.createDatabase();
         
+        System.out.println(dTemp.getFilePath());
        
     }
 
