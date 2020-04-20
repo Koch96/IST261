@@ -85,6 +85,11 @@ public class jfInstructorInfoPanel extends javax.swing.JPanel {
         jcCampus.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jcCampus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "University Park", "Abington", "Altoona", "Beaver", "Berks", "Brandywine", "Carlisle", "Dubois", "Erie (Behrend)", "Fayette", "Greater Allegheny", "Great Valley", "Harrisburg", "Hazleton", "Hershey", "Lehigh Valley", "Mont Alto", "New Kensington", "Penn College of Technology", "Schuylkill", "Scranton", "Shenango", "Wilkes-Barre", "York" }));
         jcCampus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
+        jcCampus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcCampusActionPerformed(evt);
+            }
+        });
 
         jlTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -190,6 +195,10 @@ public class jfInstructorInfoPanel extends javax.swing.JPanel {
                 .addGap(24, 24, 24))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jcCampusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcCampusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcCampusActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

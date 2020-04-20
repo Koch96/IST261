@@ -70,14 +70,14 @@ public class SQLiteDatabase
     
     
     
-    public void connectDatabase(Connection myCon )
+    public void connectDatabase()
     {
      // code followed  from  https://www.sqlitetutorial.net/sqlite-java/sqlite-jdbc-driver/
     
        
         try
         {
-           myCon = DriverManager.getConnection(filePath);// connects to the database using the filepath
+           myCon = DriverManager.getConnection("jbdc:sqlite:" + filePath.substring(1));// connects to the database using the filepath
            setMyCon(myCon);
            
            System.out.println("Connection has been established."); 
@@ -162,17 +162,17 @@ public class SQLiteDatabase
     
     //prepared Statements 
            
-    public void inputInstructorInfo( String campus, String term, String course)
+    public void inputInstructorInfo( String prefClass, String prefDay, String prefTime)
     {
-        String stmt = "INSERT INTO Instructor ( campus, term, course) VALUES( ?, ?, ?)";
+        String stmt = "INSERT INTO PERSONAL_USER ( PreferredClass, PreferredDay, PreferredTime) VALUES( ?, ?, ?)";
         
         try
         {
             PreparedStatement preStmt = myCon.prepareStatement(stmt);
             
-            preStmt.setString(1, campus);
-            preStmt.setString(2,term);
-            preStmt.setString(3, course);
+            preStmt.setString(1, prefClass);
+            preStmt.setString(2,prefDay);
+            preStmt.setString(3,  prefTime);
             preStmt.executeUpdate();
             
         }// try block

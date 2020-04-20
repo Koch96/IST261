@@ -20,7 +20,7 @@ public class rawSchedule
     public void sort()
     {
         
-        dbTemp.connectDatabase(myCon);
+        dbTemp.connectDatabase();
         
         dbTemp.TableQuery("insert actual code to do this here once database is done");
         
