@@ -24,7 +24,7 @@ public class rawSchedule
         
         dbTemp.TableQuery("insert actual code to do this here once database is done");
         
-        dbTemp.disconnect(dbTemp.getMyCon());
+        dbTemp.disconnect();
         
     }
     

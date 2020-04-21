@@ -162,9 +162,9 @@ public class SQLiteDatabase
     
     //prepared Statements 
            
-    public void inputInstructorInfo( String prefClass, String prefDay, String prefTime)
+    public void inputInstructorInfo( String prefClass, String prefDay, String prefTime, String Dep)
     {
-        String stmt = "INSERT INTO PERSONAL_USER ( PreferredClass, PreferredDay, PreferredTime) VALUES( ?, ?, ?)";
+        String stmt = "INSERT INTO PERSONAL_USER ( PreferredClass, PreferredDay, PreferredTime, Department) VALUES( ?, ?, ?, ?)";
         
         try
         {
@@ -173,6 +173,7 @@ public class SQLiteDatabase
             preStmt.setString(1, prefClass);
             preStmt.setString(2,prefDay);
             preStmt.setString(3,  prefTime);
+            preStmt.setString(4, Dep);
             preStmt.executeUpdate();
             
         }// try block
@@ -186,7 +187,7 @@ public class SQLiteDatabase
 
     
             
-    public void disconnect(Connection myCon)
+    public void disconnect()
     {
         
         

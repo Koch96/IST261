@@ -27,19 +27,24 @@ public class jfMainFrame extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jfLoginPanel1 = new PJSTGUIs.jfLoginPanel();
+        jfInstructorPreferencesPanel1 = new PJSTGUIs.jfInstructorPreferencesPanel();
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 629, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 553, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private PJSTGUIs.jfInstructorPreferencesPanel jfInstructorPreferencesPanel1;
+    private PJSTGUIs.jfLoginPanel jfLoginPanel1;
     // End of variables declaration//GEN-END:variables
 }
