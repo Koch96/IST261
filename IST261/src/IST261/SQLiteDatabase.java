@@ -5,7 +5,9 @@
  */
 package IST261;
 
-import java.awt.Panel;
+
+import PJSTGUIs.*;
+
 import java.sql.*;
 import javax.swing.JOptionPane;
 /**
@@ -164,7 +166,7 @@ public class SQLiteDatabase
     public ResultSet loginInfo(String userName, String password)
     {
         ResultSet rsReturn = null;
-        String query = "Select UserID, Password From PERSONAL_USER"
+        String query = "Select UserID, Password, Type From PERSONAL_USER"
                 + "WHERE UserID = '" + userName + "' AND Password = '" + password + "'";
              try
         {
@@ -188,7 +190,7 @@ public class SQLiteDatabase
         return rsReturn;
     }// loginInfo
     
-    public boolean checkLoginInfo(String userName, String password) 
+    public void checkLoginInfo(String userName, String password) 
     {
         ResultSet rsCheck = loginInfo(userName,password);
         
@@ -196,20 +198,33 @@ public class SQLiteDatabase
         {
             
         
-            if(rsCheck.next() == false)
-            {
+            if(rsCheck == null)
+                {
                 JOptionPane.showMessageDialog(null, "the information you put is incorrect");
-                return false;
-            }
+                
+                }
             else if(rsCheck.getString(1) == userName && rsCheck.getString(2) == password)
-                    {
-                       return true;
-                    }
+                {
+                       String info = rsCheck.getString("Type");
+       
+                            if(info == "Professor")
+                            {
+                                 InstructorFrame mFrame = new InstructorFrame();
+                                 mFrame.setVisible(true);
+                            }
+           
+                             else
+                            {
+                                 ResistrarFrame mFrame = new ResistrarFrame();
+                                 mFrame.setVisible(true);
+                             }
+       
+                }
             else
-            {
+                {
                 JOptionPane.showMessageDialog(null, "the information you put is incorrect");
-                return false;
-            }
+                
+                }
             
         
         
@@ -220,7 +235,7 @@ public class SQLiteDatabase
             System.out.println(ex.getMessage());
             
         }// catch
-            return false;
+            
     }
     
     //prepared Statements 

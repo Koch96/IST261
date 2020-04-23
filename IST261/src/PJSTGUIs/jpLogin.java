@@ -128,14 +128,14 @@ public class jpLogin extends javax.swing.JPanel {
     private void jbConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConfirmActionPerformed
         // TODO add your handling code here:
         
-        SQLiteDatabase dbTemp = new SQLiteDatabase();
-        dbTemp.connectDatabase();
-       boolean check = dbTemp.checkLoginInfo(jtLogin.getText(), jpaPassword.getText());
-       if(check == true)
-       {
-            
-                
-       }
+        String password = new String(jpaPassword.getPassword());
+        
+       SQLiteDatabase dbTemp = new SQLiteDatabase();
+       dbTemp.connectDatabase();
+        
+       dbTemp.checkLoginInfo(jtLogin.getText(), password);
+       
+       
       
     }//GEN-LAST:event_jbConfirmActionPerformed
 
