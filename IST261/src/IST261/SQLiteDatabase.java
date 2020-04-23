@@ -168,7 +168,7 @@ public class SQLiteDatabase
     {
         ResultSet rsReturn = null;
         String query = "Select UserID, Password, Type From PERSONAL_USER"
-              // + "WHERE UserID Like 'Ins'"
+              + " WHERE UserID = '" + userName + "' AND Password = '" + password + "'"
                 ;
              try
         {
@@ -244,6 +244,8 @@ public class SQLiteDatabase
     
     //prepared Statements 
            
+    
+    
     public void inputInstructorUpdate( String prefClass, String prefDay, String prefTime, String Dep)
     {
         String stmt = "INSERT INTO PERSONAL_USER ( PreferredClass, PreferredDay, PreferredTime, Department) VALUES( ?, ?, ?, ?)";
