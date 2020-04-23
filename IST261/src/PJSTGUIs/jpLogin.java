@@ -61,8 +61,12 @@ public class jpLogin extends javax.swing.JPanel {
 
         jpaPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jpaPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jpaPassword.setText("jPasswordField1");
         jpaPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 153)));
+        jpaPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpaPasswordActionPerformed(evt);
+            }
+        });
 
         jlPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -131,7 +135,11 @@ public class jpLogin extends javax.swing.JPanel {
         String password = new String(jpaPassword.getPassword());
         
        SQLiteDatabase dbTemp = new SQLiteDatabase();
-       dbTemp.connectDatabase();
+        System.out.println(dbTemp.getFilePath());
+        
+        dbTemp.connectDatabase();
+        
+        System.out.println(dbTemp.getMyCon());
         
        dbTemp.checkLoginInfo(jtLogin.getText(), password);
        
@@ -142,6 +150,10 @@ public class jpLogin extends javax.swing.JPanel {
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
         
     }//GEN-LAST:event_jbExitActionPerformed
+
+    private void jpaPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpaPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jpaPasswordActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -9,6 +9,7 @@ package IST261;
 import PJSTGUIs.*;
 
 import java.sql.*;
+import java.util.Enumeration;
 import javax.swing.JOptionPane;
 /**
  *
@@ -16,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class SQLiteDatabase 
 {
-     private String filePath = SQLiteDatabase.class.getResource("/Database/SchoolDatabase.db").getFile();
+     private String filePath = jpLogin.class.getResource("/Database/SchoolDatabase.db").getFile();
     private Connection  myCon = null;
 
     
@@ -81,8 +82,8 @@ public class SQLiteDatabase
        
         try
         {
-           myCon = DriverManager.getConnection("jbdc:sqlite:" + filePath.substring(1));// connects to the database using the filepath
-           setMyCon(myCon);
+           myCon = DriverManager.getConnection("JDBC:sqlite:" + filePath.substring(1));// connects to the database using the filepath
+           
            
            System.out.println("Connection has been established."); 
            
@@ -167,7 +168,8 @@ public class SQLiteDatabase
     {
         ResultSet rsReturn = null;
         String query = "Select UserID, Password, Type From PERSONAL_USER"
-                + "WHERE UserID = '" + userName + "' AND Password = '" + password + "'";
+              // + "WHERE UserID Like 'Ins'"
+                ;
              try
         {
             
@@ -177,6 +179,8 @@ public class SQLiteDatabase
             Statement QueryStmt = cTemp.createStatement();
             rsReturn = QueryStmt.executeQuery(query);
             
+            System.out.println(rsReturn.getString(1));
+            System.out.println(rsReturn.getString(2));
         }// if
         
         }// try
@@ -193,7 +197,7 @@ public class SQLiteDatabase
     public void checkLoginInfo(String userName, String password) 
     {
         ResultSet rsCheck = loginInfo(userName,password);
-        
+        System.out.println(rsCheck);
              try
         {
             
@@ -203,11 +207,11 @@ public class SQLiteDatabase
                 JOptionPane.showMessageDialog(null, "the information you put is incorrect");
                 
                 }
-            else if(rsCheck.getString(1) == userName && rsCheck.getString(2) == password)
+            else if(rsCheck.getString(1).equals(userName)  && rsCheck.getString(2).equals(password))
                 {
-                       String info = rsCheck.getString("Type");
+                       String info = rsCheck.getString(3);
        
-                            if(info == "Professor")
+                            if(info.equals("Professor"))
                             {
                                  InstructorFrame mFrame = new InstructorFrame();
                                  mFrame.setVisible(true);
@@ -222,7 +226,7 @@ public class SQLiteDatabase
                 }
             else
                 {
-                JOptionPane.showMessageDialog(null, "the information you put is incorrect");
+                JOptionPane.showMessageDialog(null, "the information you put is not working");
                 
                 }
             
@@ -264,7 +268,22 @@ public class SQLiteDatabase
     }// inputInstructorInfo Prepared statement    
 
     
-            
+             public void listDrivers()
+   {
+     
+    Enumeration<Driver> myDrivers =  DriverManager.getDrivers();
+    
+   
+   
+      while (myDrivers.hasMoreElements())
+      {
+          System.out.println(myDrivers.nextElement().getClass().getName());
+      }// while
+              
+   
+ 
+   }// listDrivers
+             
     public void disconnect()
     {
         

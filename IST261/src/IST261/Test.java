@@ -28,8 +28,9 @@ public class Test
     public static void main(String[] args) 
     {
         SQLiteDatabase dTemp = new SQLiteDatabase();
-        Connection myCon = null;
-        dTemp.createDatabase();
+        dTemp.listDrivers();
+        
+        dTemp.connectDatabase();
         
         System.out.println(dTemp.getFilePath());
        
