@@ -19,7 +19,7 @@ public class SQLiteDatabase
 {
      private String filePath = jpLogin.class.getResource("/Database/SchoolDatabase.db").getFile();
     private Connection  myCon = null;
-
+    private ResultSet rsUserdata= null;
     
     
     public Connection getMyCon() 
@@ -179,8 +179,7 @@ public class SQLiteDatabase
             Statement QueryStmt = cTemp.createStatement();
             rsReturn = QueryStmt.executeQuery(query);
             
-            System.out.println(rsReturn.getString(1));
-            System.out.println(rsReturn.getString(2));
+            rsUserdata = rsReturn;
         }// if
         
         }// try
@@ -240,25 +239,139 @@ public class SQLiteDatabase
             
         }// catch
             
-    }
+    }//checkLoginInfo
     
+    
+   
     //prepared Statements 
            
-    
-    
-    public void inputInstructorUpdate( String prefClass, String prefDay, String prefTime, String Dep)
+    public ResultSet UserPref()
     {
-        String stmt = "INSERT INTO PERSONAL_USER ( PreferredClass, PreferredDay, PreferredTime, Department) VALUES( ?, ?, ?, ?)";
+        ResultSet rsReturn= null;
+        String query = "Select UserID, PreferredClass, PreferredDay, PreferredTime  From PERSONAL_USER"
+              
+                ;
+             try
+        {
+            
+        Connection cTemp = getMyCon();
+        if(cTemp!= null)
+        {
+            Statement QueryStmt = cTemp.createStatement();
+            rsReturn = QueryStmt.executeQuery(query);
+            
+            
+        }// if
+        
+        }// try
+        
+        catch(SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+            
+        }// catch
+        
+        return rsReturn;
+        
+        
+    }// userPref
+    
+    public void UpdateCourse(String Prof, String Course)
+    {
+        try
+        {
+            String stmt = "UPDATE Course "
+                + "Set Prof = '" + Prof + "' "
+                    + "Where CourseName = '" + Course + "'";
+                
+            
+             Connection cTemp = getMyCon();
+        if(cTemp!= null)
+        {
+            Statement QueryStmt = cTemp.createStatement();
+              QueryStmt.executeUpdate(stmt);
+            
+            
+        }// if
+        
+             }// try block
+        
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }// catch SQLException
+    }
+    public void GenerateSchedule()
+    {  
+        
+        ResultSet rsUserPref = UserPref();
+        
+        
+         try
+        {
+           ResultSetMetaData rsMeta = rsUserPref.getMetaData();
+           
+           int colNum = rsMeta.getColumnCount();
+           while(rsUserPref.next())
+           {
+           for(int intLCV = 1; intLCV <= colNum; intLCV++)
+           {
+               System.out.println(rsUserPref.getString("UserID"));
+               
+               switch(rsMeta.getColumnName(intLCV))
+               {
+                   case "PreferredClass":
+                       UpdateCourse(rsUserPref.getString("UserID"), rsUserPref.getString(intLCV));
+                       //System.out.println("PreferredClass = " + rsUserPref.getString(intLCV) );
+                       
+                       break;
+                   case "PreferredDay":
+                       System.out.println("PreferredDay = " + rsUserPref.getString(intLCV) );
+                       break;
+                   case "PreferredTime":
+                       System.out.println("PreferredTime = " + rsUserPref.getString(intLCV) );
+                       break;
+                       
+                   default:
+               }
+               
+               
+           }// for loop
+        
+           }// while
+           
+        }// try
+        
+        catch(SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+            
+        }// catch
+        
+        
+    }
+    
+    
+    public void inputInstructorUpdate( String prefClass, String prefDay, String prefTime)
+    {
+        
         
         try
         {
-            PreparedStatement preStmt = myCon.prepareStatement(stmt);
+            String stmt = "UPDATE PERSONAL_USER "
+                + "Set PreferredClass = '" + prefClass 
+                + "', PreferredDay = '" + prefDay 
+                + "', PreferredTime = '" + prefTime + "' "
+                + "WHERE UserID = '" + rsUserdata.getString(1) + "'";
             
-            preStmt.setString(1, prefClass);
-            preStmt.setString(2,prefDay);
-            preStmt.setString(3,  prefTime);
-            preStmt.setString(4, Dep);
-            preStmt.executeUpdate();
+             Connection cTemp = getMyCon();
+        if(cTemp!= null)
+        {
+            Statement QueryStmt = cTemp.createStatement();
+              QueryStmt.executeUpdate(stmt);
+            
+            
+        }// if
             
         }// try block
         

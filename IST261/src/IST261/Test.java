@@ -31,6 +31,7 @@ public class Test
         dTemp.listDrivers();
         
         dTemp.connectDatabase();
+        dTemp.GenerateSchedule();
         
         System.out.println(dTemp.getFilePath());
        
