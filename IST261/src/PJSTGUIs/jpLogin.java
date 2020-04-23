@@ -133,7 +133,8 @@ public class jpLogin extends javax.swing.JPanel {
        boolean check = dbTemp.checkLoginInfo(jtLogin.getText(), jpaPassword.getText());
        if(check == true)
        {
-           
+            
+                
        }
       
     }//GEN-LAST:event_jbConfirmActionPerformed

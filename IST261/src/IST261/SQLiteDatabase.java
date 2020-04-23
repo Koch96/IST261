@@ -203,7 +203,7 @@ public class SQLiteDatabase
             }
             else if(rsCheck.getString(1) == userName && rsCheck.getString(2) == password)
                     {
-                       
+                       return true;
                     }
             else
             {
