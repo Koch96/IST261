@@ -5,16 +5,18 @@
  */
 package PJSTGUIs;
 
+import IST261.*;
+
 /**
  *
- * @author Joe Fromuth 
+ * @author Joey
  */
-public class jfLoginPanel extends javax.swing.JPanel {
+public class jpLogin extends javax.swing.JPanel {
 
     /**
-     * Creates new form jfLoginPanel
+     * Creates new form jpLogin
      */
-    public jfLoginPanel() {
+    public jpLogin() {
         initComponents();
     }
 
@@ -43,6 +45,11 @@ public class jfLoginPanel extends javax.swing.JPanel {
         jbExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbExit.setForeground(new java.awt.Color(255, 255, 255));
         jbExit.setText("Exit");
+        jbExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExitActionPerformed(evt);
+            }
+        });
 
         jlLogin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jlLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -65,13 +72,18 @@ public class jfLoginPanel extends javax.swing.JPanel {
         jbConfirm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jbConfirm.setForeground(new java.awt.Color(255, 255, 255));
         jbConfirm.setText("Confirm");
+        jbConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbConfirmActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,13 +117,30 @@ public class jfLoginPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jpaPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlPassword))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbConfirm)
                     .addComponent(jbExit))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConfirmActionPerformed
+        // TODO add your handling code here:
+        
+        SQLiteDatabase dbTemp = new SQLiteDatabase();
+        dbTemp.connectDatabase();
+       boolean check = dbTemp.checkLoginInfo(jtLogin.getText(), jpaPassword.getText());
+       if(check == true)
+       {
+           
+       }
+      
+    }//GEN-LAST:event_jbConfirmActionPerformed
+
+    private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbExitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

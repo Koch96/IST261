@@ -5,7 +5,9 @@
  */
 package IST261;
 
+import java.awt.Panel;
 import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Jacob Mullan
@@ -159,10 +161,71 @@ public class SQLiteDatabase
         return rsReturn;
     }// TableQuery
             
+    public ResultSet loginInfo(String userName, String password)
+    {
+        ResultSet rsReturn = null;
+        String query = "Select UserID, Password From PERSONAL_USER"
+                + "WHERE UserID = '" + userName + "' AND Password = '" + password + "'";
+             try
+        {
+            
+        Connection cTemp = getMyCon();
+        if(cTemp!= null)
+        {
+            Statement QueryStmt = cTemp.createStatement();
+            rsReturn = QueryStmt.executeQuery(query);
+            
+        }// if
+        
+        }// try
+        
+        catch(SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+            
+        }// catch
+        
+        return rsReturn;
+    }// loginInfo
+    
+    public boolean checkLoginInfo(String userName, String password) 
+    {
+        ResultSet rsCheck = loginInfo(userName,password);
+        
+             try
+        {
+            
+        
+            if(rsCheck.next() == false)
+            {
+                JOptionPane.showMessageDialog(null, "the information you put is incorrect");
+                return false;
+            }
+            else if(rsCheck.getString(1) == userName && rsCheck.getString(2) == password)
+                    {
+                       
+                    }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "the information you put is incorrect");
+                return false;
+            }
+            
+        
+        
+        }// try
+        
+        catch(SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+            
+        }// catch
+            return false;
+    }
     
     //prepared Statements 
            
-    public void inputInstructorInfo( String prefClass, String prefDay, String prefTime, String Dep)
+    public void inputInstructorUpdate( String prefClass, String prefDay, String prefTime, String Dep)
     {
         String stmt = "INSERT INTO PERSONAL_USER ( PreferredClass, PreferredDay, PreferredTime, Department) VALUES( ?, ?, ?, ?)";
         
