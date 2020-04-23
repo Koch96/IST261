@@ -27,34 +27,34 @@ public class ConnectedPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpLogin1 = new PJSTGUIs.jpLogin();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jfInstructorInfoPanel1 = new PJSTGUIs.jfInstructorInfoPanel();
-        jfRevisedSchedulePanel1 = new PJSTGUIs.jfRevisedSchedulePanel();
+        jpRevisedSchedule1 = new PJSTGUIs.jpRevisedSchedule();
+        jpInstructorInfo1 = new PJSTGUIs.jpInstructorInfo();
 
-        jTabbedPane1.addTab("tab1", jfInstructorInfoPanel1);
-        jTabbedPane1.addTab("tab2", jfRevisedSchedulePanel1);
+        jTabbedPane1.addTab("tab2", jpRevisedSchedule1);
+        jTabbedPane1.addTab("tab1", jpInstructorInfo1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(124, 124, 124)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 111, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane jTabbedPane1;
-    private PJSTGUIs.jfInstructorInfoPanel jfInstructorInfoPanel1;
-    private PJSTGUIs.jfRevisedSchedulePanel jfRevisedSchedulePanel1;
+    private PJSTGUIs.jpInstructorInfo jpInstructorInfo1;
+    private PJSTGUIs.jpLogin jpLogin1;
+    private PJSTGUIs.jpRevisedSchedule jpRevisedSchedule1;
     // End of variables declaration//GEN-END:variables
 }

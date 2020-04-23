@@ -139,7 +139,7 @@ public class jpLogin extends javax.swing.JPanel {
     }//GEN-LAST:event_jbConfirmActionPerformed
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jbExitActionPerformed
 
 
