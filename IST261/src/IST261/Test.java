@@ -6,8 +6,6 @@
 
 package IST261;
 
-import java.sql.*;
-
 /**
  *
  * @author Jacob Mullan

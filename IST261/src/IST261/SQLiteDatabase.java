@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class SQLiteDatabase 
 {
-     private String filePath = jpLogin.class.getResource("/Database/SchoolDatabase.db").getFile();
+    private String filePath = jpLogin.class.getResource("/Database/SchoolDatabase.db").getFile();
     private Connection  myCon = null;
     private ResultSet rsUserdata= null;
     
@@ -27,27 +27,20 @@ public class SQLiteDatabase
         return myCon;
     }// getMyCon
 
-    
-    
     public void setMyCon(Connection newMyCon)
     {
         myCon = newMyCon;
     }// setMyCon
     
-    
-    
     public String getFilePath() {
         return filePath;
     }// getFilePath
 
-    
-    
     public void setFilePath(String newFilePath) {
         filePath = newFilePath;
     }// setfilePath
     
-    
-    
+    //creates database for course scheduling
     public void createDatabase()
     {
         
@@ -73,8 +66,7 @@ public class SQLiteDatabase
         
     }// createDatabase
     
-    
-    
+    //connects to database
     public void connectDatabase()
     {
      // code followed  from  https://www.sqlitetutorial.net/sqlite-java/sqlite-jdbc-driver/
@@ -92,16 +84,15 @@ public class SQLiteDatabase
         catch(SQLException myException)
         {
              System.out.println(myException.getMessage());
-        }//
+        }//catch SQLException
           
     }// connectDatabase
-    
-    
     
     // gotten from https://www.sqlitetutorial.net/sqlite-java/create-table/
     
     //table stuff
     
+    //creates a table in the database
     public void createTable(String tableQuery)
     {
         String newTableQuery = tableQuery;
@@ -111,15 +102,14 @@ public class SQLiteDatabase
             Statement createTable = myCon.createStatement();
             createTable.execute(newTableQuery);
             System.out.println("A Table has been created");
-        }//try to creat Table
+        }//try to create Table
         catch(SQLException e)
         {
             System.out.println(e.getMessage());
         }// catch SQLException
     }// createTable
     
-    
-    
+    //drops a table from the database
     public void DropTable(String tableQuery)
     {
         String newTableQuery = tableQuery;
@@ -137,8 +127,7 @@ public class SQLiteDatabase
         }// catch SQLException
     }// DropTable
     
-    
-    
+    //returns table of database queries
     public ResultSet TableQuery (String Query) 
     {
         ResultSet rsReturn = null;
@@ -163,7 +152,8 @@ public class SQLiteDatabase
         
         return rsReturn;
     }// TableQuery
-            
+    
+    //sets user login info
     public ResultSet loginInfo(String userName, String password)
     {
         ResultSet rsReturn = null;
@@ -193,6 +183,7 @@ public class SQLiteDatabase
         return rsReturn;
     }// loginInfo
     
+    //validates user login info
     public void checkLoginInfo(String userName, String password) 
     {
         ResultSet rsCheck = loginInfo(userName,password);
@@ -205,24 +196,26 @@ public class SQLiteDatabase
                 {
                 JOptionPane.showMessageDialog(null, "the information you put is incorrect");
                 
-                }
+                }// rsCheck is null
             else if(rsCheck.getString(1).equals(userName)  && rsCheck.getString(2).equals(password))
                 {
                        String info = rsCheck.getString(3);
        
+                            //if user is a professor
                             if(info.equals("Professor"))
                             {
                                  InstructorFrame mFrame = new InstructorFrame();
                                  mFrame.setVisible(true);
                             }
            
+                            //if user is a registrar
                              else
                             {
-                                 ResistrarFrame mFrame = new ResistrarFrame();
+                                 RegistrarFrame mFrame = new RegistrarFrame();
                                  mFrame.setVisible(true);
                              }
        
-                }
+                }// if username and password are valid
             else
                 {
                 JOptionPane.showMessageDialog(null, "the information you put is not working");
@@ -241,24 +234,24 @@ public class SQLiteDatabase
             
     }//checkLoginInfo
     
-           
+    //sets user preferences       
     public ResultSet UserPref()
     {
         ResultSet rsReturn= null;
         String query = "Select UserID, PreferredClass, PreferredDay, PreferredTime  From PERSONAL_USER"
               
                 ;
-             try
+        try
         {
             
         Connection cTemp = getMyCon();
         if(cTemp!= null)
-        {
-            Statement QueryStmt = cTemp.createStatement();
-            rsReturn = QueryStmt.executeQuery(query);
+            {
+                Statement QueryStmt = cTemp.createStatement();
+                rsReturn = QueryStmt.executeQuery(query);
             
             
-        }// if
+            }// if
         
         }// try
         
@@ -273,6 +266,7 @@ public class SQLiteDatabase
         
     }// userPref
     
+    //updates course preference
     public void UpdateCourse(String Prof, String Course)
     {
         try
@@ -299,6 +293,7 @@ public class SQLiteDatabase
         }// catch SQLException
     }
     
+    //generates schedule
     public void GenerateSchedule()
     {  
         
@@ -352,7 +347,7 @@ public class SQLiteDatabase
         
     }//Generate schedule
     
-    
+    //sets course information
     public ResultSet CourseInfo()
     {
         ResultSet rsReturn= null;
@@ -384,6 +379,7 @@ public class SQLiteDatabase
         
     }// CourseInfo
     
+    //checks course information
     public String checkCourseInfo(ResultSet CourseInfo)
     {
          ResultSet rsCourseInfo = CourseInfo;
@@ -422,7 +418,7 @@ public class SQLiteDatabase
          return sbReturn.toString();
     }// checkCourseInfo
     
-    
+    //updates instructor info
     public void inputInstructorUpdate( String prefClass, String prefDay, String prefTime)
     {
         
@@ -453,8 +449,8 @@ public class SQLiteDatabase
         
     }// inputInstructorInfo Prepared statement    
 
-    
-             public void listDrivers()
+    //lists database drivers
+    public void listDrivers()
    {
      
     Enumeration<Driver> myDrivers =  DriverManager.getDrivers();
@@ -469,7 +465,8 @@ public class SQLiteDatabase
    
  
    }// listDrivers
-             
+    
+   //disconnects from database
     public void disconnect()
     {
         
