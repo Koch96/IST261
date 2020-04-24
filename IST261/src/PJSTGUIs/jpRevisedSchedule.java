@@ -69,7 +69,10 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jGenerateSchedule.setText("Generate raw schedule");
+        jGenerateSchedule.setBackground(new java.awt.Color(0, 0, 153));
+        jGenerateSchedule.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jGenerateSchedule.setForeground(new java.awt.Color(255, 255, 255));
+        jGenerateSchedule.setText("Generate Raw Schedule");
         jGenerateSchedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jGenerateScheduleActionPerformed(evt);
@@ -86,19 +89,18 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jbChange1)
-                                .addGap(43, 43, 43)
-                                .addComponent(jGenerateSchedule)
-                                .addGap(57, 57, 57)
-                                .addComponent(jbExit))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jlProgramCoord)
-                                    .addComponent(jlRevisedSchedule))))))
+                        .addComponent(jbChange1)
+                        .addGap(43, 43, 43)
+                        .addComponent(jGenerateSchedule)
+                        .addGap(57, 57, 57)
+                        .addComponent(jbExit)))
                 .addGap(25, 25, 25))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(145, 145, 145)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jlProgramCoord)
+                    .addComponent(jlRevisedSchedule))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
