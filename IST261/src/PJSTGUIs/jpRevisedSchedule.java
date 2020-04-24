@@ -35,7 +35,7 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
         jbChange1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        jGenerateSchedule = new javax.swing.JButton();
 
         jlProgramCoord.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jlProgramCoord.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -69,10 +69,10 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton1.setText("Generate raw schedule");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jGenerateSchedule.setText("Generate raw schedule");
+        jGenerateSchedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jGenerateScheduleActionPerformed(evt);
             }
         });
 
@@ -90,7 +90,7 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jbChange1)
                                 .addGap(43, 43, 43)
-                                .addComponent(jButton1)
+                                .addComponent(jGenerateSchedule)
                                 .addGap(57, 57, 57)
                                 .addComponent(jbExit))
                             .addGroup(layout.createSequentialGroup()
@@ -113,17 +113,14 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbExit)
                     .addComponent(jbChange1)
-                    .addComponent(jButton1))
+                    .addComponent(jGenerateSchedule))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbChange1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbChange1ActionPerformed
         // TODO add your handling code here:
-        SQLiteDatabase dbTemp = new SQLiteDatabase();
-        
-        dbTemp.connectDatabase();
-        jTextArea1.setText(dbTemp.checkCourseInfo(dbTemp.CourseInfo()));
+       
         
     }//GEN-LAST:event_jbChange1ActionPerformed
 
@@ -131,13 +128,17 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbExitActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jGenerateScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGenerateScheduleActionPerformed
+         SQLiteDatabase dbTemp = new SQLiteDatabase();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+        dbTemp.connectDatabase();
+        dbTemp.GenerateSchedule();
+        jTextArea1.setText(dbTemp.checkCourseInfo(dbTemp.CourseInfo()));
+    }//GEN-LAST:event_jGenerateScheduleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jGenerateSchedule;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbChange1;

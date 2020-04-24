@@ -26,7 +26,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jbChange1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jGenerateSchedule" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Component id="jbExit" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -57,7 +57,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jbExit" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jbChange1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jGenerateSchedule" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -132,12 +132,12 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jGenerateSchedule">
       <Properties>
         <Property name="text" type="java.lang.String" value="Generate raw schedule"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jGenerateScheduleActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
