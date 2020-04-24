@@ -5,6 +5,8 @@
  */
 package PJSTGUIs;
 
+import IST261.*;
+
 /**
  *
  * @author Joey
@@ -30,7 +32,7 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
         jlProgramCoord = new javax.swing.JLabel();
         jlRevisedSchedule = new javax.swing.JLabel();
         jbExit = new javax.swing.JButton();
-        jbConfirm1 = new javax.swing.JButton();
+        jbChange1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
@@ -53,13 +55,13 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
             }
         });
 
-        jbConfirm1.setBackground(new java.awt.Color(0, 0, 153));
-        jbConfirm1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jbConfirm1.setForeground(new java.awt.Color(255, 255, 255));
-        jbConfirm1.setText("Change");
-        jbConfirm1.addActionListener(new java.awt.event.ActionListener() {
+        jbChange1.setBackground(new java.awt.Color(0, 0, 153));
+        jbChange1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jbChange1.setForeground(new java.awt.Color(255, 255, 255));
+        jbChange1.setText("Change");
+        jbChange1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbConfirm1ActionPerformed(evt);
+                jbChange1ActionPerformed(evt);
             }
         });
 
@@ -86,7 +88,7 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jbConfirm1)
+                                .addComponent(jbChange1)
                                 .addGap(43, 43, 43)
                                 .addComponent(jButton1)
                                 .addGap(57, 57, 57)
@@ -110,15 +112,20 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbExit)
-                    .addComponent(jbConfirm1)
+                    .addComponent(jbChange1)
                     .addComponent(jButton1))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbConfirm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbConfirm1ActionPerformed
+    private void jbChange1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbChange1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbConfirm1ActionPerformed
+        SQLiteDatabase dbTemp = new SQLiteDatabase();
+        
+        dbTemp.connectDatabase();
+        jTextArea1.setText(dbTemp.checkCourseInfo(dbTemp.CourseInfo()));
+        
+    }//GEN-LAST:event_jbChange1ActionPerformed
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
         // TODO add your handling code here:
@@ -133,7 +140,7 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton jbConfirm1;
+    private javax.swing.JButton jbChange1;
     private javax.swing.JButton jbExit;
     private javax.swing.JLabel jlProgramCoord;
     private javax.swing.JLabel jlRevisedSchedule;

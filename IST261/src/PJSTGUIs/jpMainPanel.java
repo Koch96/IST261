@@ -29,12 +29,14 @@ public class jpMainPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
         jpInstructorInfo1 = new PJSTGUIs.jpInstructorInfo();
         jpRevisedSchedule1 = new PJSTGUIs.jpRevisedSchedule();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jpRevisedSchedule2 = new PJSTGUIs.jpRevisedSchedule();
+        jpInstructorInfo2 = new PJSTGUIs.jpInstructorInfo();
 
-        jTabbedPane1.addTab("tab1", jpInstructorInfo1);
-        jTabbedPane1.addTab("tab2", jpRevisedSchedule1);
+        jTabbedPane1.addTab("tab1", jpRevisedSchedule2);
+        jTabbedPane1.addTab("tab2", jpInstructorInfo2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -56,6 +58,8 @@ public class jpMainPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane jTabbedPane1;
     private PJSTGUIs.jpInstructorInfo jpInstructorInfo1;
+    private PJSTGUIs.jpInstructorInfo jpInstructorInfo2;
     private PJSTGUIs.jpRevisedSchedule jpRevisedSchedule1;
+    private PJSTGUIs.jpRevisedSchedule jpRevisedSchedule2;
     // End of variables declaration//GEN-END:variables
 }

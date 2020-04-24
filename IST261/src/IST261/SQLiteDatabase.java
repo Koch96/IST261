@@ -241,9 +241,6 @@ public class SQLiteDatabase
             
     }//checkLoginInfo
     
-    
-   
-    //prepared Statements 
            
     public ResultSet UserPref()
     {
@@ -301,6 +298,7 @@ public class SQLiteDatabase
             System.out.println(e.getMessage());
         }// catch SQLException
     }
+    
     public void GenerateSchedule()
     {  
         
@@ -321,19 +319,22 @@ public class SQLiteDatabase
                switch(rsMeta.getColumnName(intLCV))
                {
                    case "PreferredClass":
-                       UpdateCourse(rsUserPref.getString("UserID"), rsUserPref.getString(intLCV));
+                       if(rsUserPref.getString(intLCV) != null)
+                       {
+                            UpdateCourse(rsUserPref.getString("UserID"), rsUserPref.getString(intLCV));
+                       }
                        //System.out.println("PreferredClass = " + rsUserPref.getString(intLCV) );
                        
                        break;
                    case "PreferredDay":
-                       System.out.println("PreferredDay = " + rsUserPref.getString(intLCV) );
+                       
                        break;
                    case "PreferredTime":
-                       System.out.println("PreferredTime = " + rsUserPref.getString(intLCV) );
+                       
                        break;
                        
                    default:
-               }
+               }// switch
                
                
            }// for loop
@@ -349,7 +350,77 @@ public class SQLiteDatabase
         }// catch
         
         
-    }
+    }//Generate schedule
+    
+    
+    public ResultSet CourseInfo()
+    {
+        ResultSet rsReturn= null;
+        String query = "Select * from Course"
+              
+                ;
+             try
+        {
+            
+        Connection cTemp = getMyCon();
+        if(cTemp!= null)
+        {
+            Statement QueryStmt = cTemp.createStatement();
+            rsReturn = QueryStmt.executeQuery(query);
+            
+            
+        }// if
+        
+        }// try
+        
+        catch(SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+            
+        }// catch
+        
+        return rsReturn;
+        
+        
+    }// CourseInfo
+    
+    public String checkCourseInfo(ResultSet CourseInfo)
+    {
+         ResultSet rsCourseInfo = CourseInfo;
+         StringBuilder sbReturn = new StringBuilder();
+        
+         try
+        {
+           ResultSetMetaData rsMeta = rsCourseInfo.getMetaData();
+           
+           int colNum = rsMeta.getColumnCount();
+           while(rsCourseInfo.next())
+           {
+           for(int intLCV = 1; intLCV <= colNum; intLCV++)
+           {
+               if(rsMeta.getColumnLabel(intLCV).equals("CourseNum"))
+               {
+                   sbReturn.append("\n");
+               }
+               
+               sbReturn.append(rsMeta.getColumnLabel(intLCV) +
+               " = " + rsCourseInfo.getString(intLCV));
+               sbReturn.append("\n");
+
+           }// for loop
+        
+           }// while
+           
+        }// try
+        
+        catch(SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+            
+        }// catch
+        
+         return sbReturn.toString();
+    }// checkCourseInfo
     
     
     public void inputInstructorUpdate( String prefClass, String prefDay, String prefTime)
