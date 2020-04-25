@@ -6,6 +6,10 @@
     </Component>
     <Component class="PJSTGUIs.jpRevisedSchedule" name="jpRevisedSchedule1">
     </Component>
+    <Component class="PJSTGUIs.jpInstructorInfo" name="jpInstructorInfo2">
+    </Component>
+    <Component class="PJSTGUIs.jpInstructorInfo" name="jpInstructorInfo3">
+    </Component>
   </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -51,7 +55,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="PJSTGUIs.jpInstructorInfo" name="jpInstructorInfo2">
+        <Component class="PJSTGUIs.jpInstructorInfo" name="jpInstructorInfo4">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="tab2">
