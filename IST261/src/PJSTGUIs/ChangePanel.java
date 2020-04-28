@@ -73,6 +73,8 @@ public class ChangePanel extends javax.swing.JPanel {
 
         jtSection.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
+        jExitButton.setBackground(new java.awt.Color(0, 0, 153));
+        jExitButton.setForeground(new java.awt.Color(255, 255, 255));
         jExitButton.setText("Exit");
         jExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
