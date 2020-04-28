@@ -104,13 +104,8 @@ public class jpInstructorInfo extends javax.swing.JPanel {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Username");
-
-        jtUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtUserActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -200,10 +195,6 @@ public class jpInstructorInfo extends javax.swing.JPanel {
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
        System.exit(0);
     }//GEN-LAST:event_jbExitActionPerformed
-
-    private void jtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtUserActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
