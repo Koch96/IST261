@@ -5,6 +5,8 @@
  */
 package PJSTGUIs;
 
+import IST261.*;
+
 /**
  *
  * @author Jake_Gaming_PC
@@ -126,7 +128,12 @@ public class ChangePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        SQLiteDatabase dbTemp = new SQLiteDatabase();
+                dbTemp.connectDatabase();
+                
+                
+                
+                jTextArea1.setText(dbTemp.checkCourseInfo(dbTemp.CourseInfo()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

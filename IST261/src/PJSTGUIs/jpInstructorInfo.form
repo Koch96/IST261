@@ -46,13 +46,15 @@
                               </Group>
                           </Group>
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane1" max="32767" attributes="0"/>
-                          <Component id="jtDepartment" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jtCourse" alignment="1" max="32767" attributes="0"/>
                           <Component id="jtTimes" alignment="1" max="32767" attributes="0"/>
                           <Component id="jtDays" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jtUser" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -67,7 +69,12 @@
               <Component id="jlTitle" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Component id="jlAddCourse" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtUser" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jlDays" min="-2" max="-2" attributes="0"/>
@@ -83,12 +90,12 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jtTimes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jtDepartment" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtCourse" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jbExit" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jbAddCourse" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -204,7 +211,7 @@
         <Property name="text" type="java.lang.String" value="Days Available:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtDepartment">
+    <Component class="javax.swing.JTextField" name="jtCourse">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="1"/>
@@ -240,5 +247,15 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Username"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtUser">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtUserActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

@@ -5,6 +5,8 @@
  */
 package PJSTGUIs;
 
+import IST261.*;
+
 /**
  *
  * @author Joey
@@ -36,10 +38,12 @@ public class jpInstructorInfo extends javax.swing.JPanel {
         jlAddCourse = new javax.swing.JLabel();
         jtTimes = new javax.swing.JTextField();
         jlDays = new javax.swing.JLabel();
-        jtDepartment = new javax.swing.JTextField();
+        jtCourse = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jtUser = new javax.swing.JTextField();
 
         jbAddCourse.setBackground(new java.awt.Color(0, 0, 153));
         jbAddCourse.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -89,9 +93,9 @@ public class jpInstructorInfo extends javax.swing.JPanel {
         jlDays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlDays.setText("Days Available:");
 
-        jtDepartment.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jtDepartment.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jtDepartment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jtCourse.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jtCourse.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtCourse.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Comments:");
@@ -99,6 +103,14 @@ public class jpInstructorInfo extends javax.swing.JPanel {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel2.setText("Username");
+
+        jtUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtUserActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -127,13 +139,15 @@ public class jpInstructorInfo extends javax.swing.JPanel {
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jlTimes)
                                     .addComponent(jlDepartment)))
-                            .addComponent(jLabel1))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(137, 137, 137)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
-                            .addComponent(jtDepartment, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtCourse, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jtTimes, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jtDays, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(jtDays, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtUser))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -143,7 +157,11 @@ public class jpInstructorInfo extends javax.swing.JPanel {
                 .addComponent(jlTitle)
                 .addGap(39, 39, 39)
                 .addComponent(jlAddCourse)
-                .addGap(48, 48, 48)
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jlDays)
@@ -158,10 +176,10 @@ public class jpInstructorInfo extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jtTimes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbExit)
                     .addComponent(jbAddCourse))
@@ -170,16 +188,27 @@ public class jpInstructorInfo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAddCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAddCourseActionPerformed
-        // TODO add your handling code here:
+         SQLiteDatabase dbTemp = new SQLiteDatabase();
+                dbTemp.connectDatabase();
+                
+                dbTemp.inputInstructorUpdate(jtUser.getText(), jtCourse.getText(), jtDays.getText(), jtTimes.getText(), jTextArea1.getText());
+                
+                
+               
     }//GEN-LAST:event_jbAddCourseActionPerformed
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
-        // TODO add your handling code here:
+       System.exit(0);
     }//GEN-LAST:event_jbExitActionPerformed
+
+    private void jtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtUserActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbAddCourse;
@@ -189,8 +218,9 @@ public class jpInstructorInfo extends javax.swing.JPanel {
     private javax.swing.JLabel jlDepartment;
     private javax.swing.JLabel jlTimes;
     private javax.swing.JLabel jlTitle;
+    private javax.swing.JTextField jtCourse;
     private javax.swing.JTextField jtDays;
-    private javax.swing.JTextField jtDepartment;
     private javax.swing.JTextField jtTimes;
+    private javax.swing.JTextField jtUser;
     // End of variables declaration//GEN-END:variables
 }

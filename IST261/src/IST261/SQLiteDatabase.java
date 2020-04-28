@@ -419,17 +419,18 @@ public class SQLiteDatabase
     }// checkCourseInfo
     
     //updates instructor info
-    public void inputInstructorUpdate( String prefClass, String prefDay, String prefTime)
+    public void inputInstructorUpdate( String userID, String prefClass, String prefDay, String prefTime, String comments)
     {
         
         
         try
         {
-            String stmt = "UPDATE PERSONAL_USER "
+            String stmt = "UPDATE PERSONAL_USER\n "
                 + "Set PreferredClass = '" + prefClass 
                 + "', PreferredDay = '" + prefDay 
-                + "', PreferredTime = '" + prefTime + "' "
-                + "WHERE UserID = '" + rsUserdata.getString(1) + "'";
+                + "', PreferredTime = '" + prefTime 
+                  + "', Comments = '" + comments + "' "
+                + "WHERE UserID = '" + userID + "'";//" + rsUserdata.getString(1) + "
             
              Connection cTemp = getMyCon();
         if(cTemp!= null)
