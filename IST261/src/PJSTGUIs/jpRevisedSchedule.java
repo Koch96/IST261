@@ -121,13 +121,13 @@ public class jpRevisedSchedule extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbChange1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbChange1ActionPerformed
-        // TODO add your handling code here:
-       
+        ChangeFrame change = new ChangeFrame();
+        change.setVisible(true);
         
     }//GEN-LAST:event_jbChange1ActionPerformed
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jbExitActionPerformed
 
     private void jGenerateScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGenerateScheduleActionPerformed

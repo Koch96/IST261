@@ -36,34 +36,45 @@ public class jpMainPanel extends javax.swing.JPanel {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jpRevisedSchedule2 = new PJSTGUIs.jpRevisedSchedule();
         jpInstructorInfo4 = new PJSTGUIs.jpInstructorInfo();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jpInstructorInfo5 = new PJSTGUIs.jpInstructorInfo();
+        jpRevisedSchedule3 = new PJSTGUIs.jpRevisedSchedule();
 
         jTabbedPane1.addTab("tab1", jpRevisedSchedule2);
         jTabbedPane1.addTab("tab2", jpInstructorInfo4);
+
+        jTabbedPane2.addTab("tab1", jpInstructorInfo5);
+        jTabbedPane2.addTab("tab2", jpRevisedSchedule3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE))
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private PJSTGUIs.jpInstructorInfo jpInstructorInfo1;
     private PJSTGUIs.jpInstructorInfo jpInstructorInfo2;
     private PJSTGUIs.jpInstructorInfo jpInstructorInfo3;
     private PJSTGUIs.jpInstructorInfo jpInstructorInfo4;
+    private PJSTGUIs.jpInstructorInfo jpInstructorInfo5;
     private PJSTGUIs.jpRevisedSchedule jpRevisedSchedule1;
     private PJSTGUIs.jpRevisedSchedule jpRevisedSchedule2;
+    private PJSTGUIs.jpRevisedSchedule jpRevisedSchedule3;
     // End of variables declaration//GEN-END:variables
 }
