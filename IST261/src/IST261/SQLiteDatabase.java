@@ -450,6 +450,34 @@ public class SQLiteDatabase
         
     }// inputInstructorInfo Prepared statement    
 
+    public void UpdateCourseProf( String prof, String classID, String sectionID)
+    {
+        
+        
+        try
+        {
+            String stmt = "UPDATE Course\n "
+                + "Set Prof = '" + prof + "' "
+                + "WHERE CourseNum = '" + classID + "' AND sectionID = '" + sectionID +"' ";
+            
+             Connection cTemp = getMyCon();
+        if(cTemp!= null)
+        {
+            Statement QueryStmt = cTemp.createStatement();
+              QueryStmt.executeUpdate(stmt);
+            
+            
+        }// if
+            
+        }// try block
+        
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }// catch SQLException
+        
+    }// inputInstructorInfo Prepared statement   
+    
     //lists database drivers
     public void listDrivers()
    {
